@@ -1,77 +1,43 @@
-/* General body styles */
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Aileron-Black', sans-serif;
-    color: white;
-    background: none;
-}
-
-/* Full-screen background setup */
-#bk {
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background-image: url('./img/bg.png'); /* Background image path */
-    background-size: cover; /* Cover the full view */
-    background-position: center; /* Center the background image */
-    position: fixed; /* Fixed to avoid scrolling effects */
-    top: 0;
-    left: 0;
-    z-index: -1; /* Below all other content */
-}
-
-/* Centered content area */
-#main {
-    width: 80%; /* Optimal reading width */
-    max-width: 1170px; /* Maximum width constraint */
-    min-height: calc(100vh - 40px); /* Full height minus some margin */
-    margin: 20px auto; /* Center horizontally and add vertical spacing */
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    border-radius: 10px; /* Rounded corners */
-    display: flex; /* Flexbox for vertical center alignment */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center-align children horizontally */
-    justify-content: center; /* Center-align children vertically */
-}
-
-/* Profile image specific styles */
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* Circular image */
-    margin-bottom: 20px; /* Space between image and text */
-}
-
-/* Basic information text styling */
-.profile-info {
-    text-align: center; /* Center-align text */
-    font-size: 20px; /* Legible font size */
-    line-height: 1.6; /* Optimal reading line height */
-}
-
-/* Navigation and header adjustments */
-#nav, header {
-    display: none; /* Remove header and navigation for simplicity */
-}
-
-/* Footer styling adjustments */
-footer {
-    display: none; /* Remove footer for simplicity */
-}
-
-/* Basic typographic and cursor animations */
-.cursor {
-    display: inline-block;
-    width: 2px;
-    height: 20px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 5px;
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    50% {
-        background-color: transparent;
+/* 优化后的CSS: 使用内联样式标签减少请求，并压缩CSS提高加载速度 */
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Aileron-Black', sans-serif;
+        color: white;
+        background: none;
     }
-}
+    #bk {
+        width: 100vw;
+        height: 100vh;
+        background: url('./img/bg-optimized.jpg') center/cover no-repeat fixed;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #main {
+        width: 80%;
+        max-width: 1170px;
+        min-height: calc(100vh - 40px);
+        margin: 20px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    .profile-info {
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+</style>
