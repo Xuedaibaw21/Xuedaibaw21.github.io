@@ -1,128 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-    <meta charset="utf-8"></meta>
-    <link rel="stylesheet" href="styles.css"></link>
+    <meta charset="UTF-8">
+    <title>王鑫的简历</title>
+    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>简历</title>
-</head>    
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background-image {
+            background-image: url('./img/background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .profile h1, .profile p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
 <body>
-    <div id="bk"></div>
-    <header>
-        <div id="head">
-            <img src="./img/WX.png" alt="BL" title="王鑫">
-            <div id="nav">
-                <a>home</a> &nbsp;&nbsp;
-                <a>hobby</a>  &nbsp;&nbsp;
-                <a>hometown</a>  &nbsp;&nbsp;
-                <b><a>about</a></b>  
-            </div>
+    <div class="background-image">
+        <div class="profile">
+            <h1>王鑫</h1>
+            <p>成都理工大学 | 地球物理学院</p>
+            <p>空间科学与技术</p>
+            <p>成都 | 二仙桥</p>
+            <p>联系电话: 19981794817</p>
+            <p>Email: xuedaiba91@gmail.com</p>
         </div>
-    </header>
-    <div id="main">
-        <div style="width: 130px;height: 130px;border-radius: 50%;margin: 0 auto;">
-            <img style="width: 130px;height: 130px;border-radius: 50%;margin: 0 auto;" src="./img/wx_head.jpg"/>
-        </div>
-
-        <div style=" width: 380px;margin: 40px auto;border-bottom:1px beige solid;display: flex;justify-content: center;flex-direction: column;">
-            <div id="typewriter"><span class="cursor"></span></div>
-            
-        </div>
-        <div id="profile" style="width: 400px; width: autopx;margin: 40px auto;display: flex;align-items: center;flex-direction: column;">
-            <b>姓名&nbsp;|&nbsp;王鑫</b>
-            <b>成都理工大学</b>
-            <b>地球物理学院</b>
-            <b>空间科学与技术</b>
-            <b>成都&nbsp;|&nbsp;二仙桥</b>
-            <b>19981794817&nbsp;|&nbsp;xuedaiba91@gmail.com</b>
-        </div>
-        <div style="border-bottom: 1px yellow dashed;width: 80%;margin: 0 auto;"></div>
-        <section id="basical-info" style="width: 900px; width: autopx;margin: 40px auto;display: flex;align-items: center;flex-direction: column;">
-        </section>
-        <div id="slider">
-            <div class="slides-container">
-                <img src="./img/大楼.jpg" class="slide" alt="Slide 1">
-                <img src="./img/柳树.jpg" class="slide" alt="Slide 2">
-            </div>
-        </div>
-        <script>
-            const slides = document.querySelectorAll('.slide');
-            let currentSlide = 0;
-            const slideInterval = setInterval(nextSlide, 3000); // Change slide every 3000 ms
-    
-            function nextSlide() {
-                slides[currentSlide].style.display = 'none'; // Hide current slide
-                currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
-                slides[currentSlide].style.display = 'block'; // Show next slide
-            }
-        </script>
-        <script>
-
-            const text = "秋风吹渭水，落叶满长安。";
-            const typewriter = document.getElementById("typewriter");
-            const cursor = document.querySelector(".cursor");
-            let index = 0;
-            let isAdding = true;
-    
-            function step() {
-                setTimeout(() => {
-                    if (isAdding) {
-                        if (index < text.length) {
-                            cursor.before(text[index++]);
-                            step();
-                        } else {
-                            isAdding = false;
-                            setTimeout(step, 2000); // 暂停一会儿再删除
-                        }
-                    } else {
-                        if (index > 0) {
-                            typewriter.textContent = text.substring(0, --index);
-                            typewriter.appendChild(cursor); // 保持光标在文字后
-                            step();
-                        } else {
-                            isAdding = true;
-                            setTimeout(step, 2000); // 暂停一会儿再开始添加
-                        }
-                    }
-                }, isAdding ? 120 : 60);
-            }
-    
-            step();
-        </script>
-    </div>
-    <footer>
-        <div id="foot">
-            <div id="footer-left">
-                <p1>Contact:</p1>
-
-            </div>
-            <div id="footer-right">
-                <li><span>Phone:</span>15908136150</li></li>
-                <li><span>Email:</span>leibao554@gmail.com</li>
-                <li><span>QQ:</span>3014711281</li>
-                <div id="icons">
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5007 0C5.46381 0 5.20817 0.00890629 4.40818 0.045293C3.60973 0.0818555 3.06475 0.208242 2.58785 0.39375C2.09455 0.585293 1.67613 0.841523 1.25924 1.25859C0.842051 1.67543 0.585762 2.09391 0.393575 2.58703C0.207657 3.06404 0.0810936 3.6092 0.0451757 4.40736C0.00937488 5.20734 0 5.46316 0 7.50006C0 9.53695 0.00908207 9.79178 0.045293 10.5918C0.0820313 11.3903 0.208418 11.9353 0.39375 12.4121C0.585469 12.9054 0.841699 13.3239 1.25877 13.7408C1.67549 14.1579 2.09391 14.4148 2.58691 14.6064C3.0641 14.7918 3.60926 14.9183 4.40754 14.9548C5.20758 14.9912 5.46305 15.0001 7.49977 15.0001C9.53684 15.0001 9.79166 14.9912 10.5917 14.9548C11.3901 14.9183 11.9357 14.7918 12.413 14.6064C12.9061 14.4148 13.3239 14.1579 13.7406 13.7408C14.1578 13.3239 14.4141 12.9054 14.6062 12.4123C14.7906 11.9353 14.9172 11.3901 14.9547 10.5919C14.9906 9.79195 15 9.53695 15 7.50006C15 5.46316 14.9906 5.20752 14.9547 4.40754C14.9172 3.60908 14.7906 3.06404 14.6062 2.58721C14.4141 2.09391 14.1578 1.67543 13.7406 1.25859C13.3234 0.841406 12.9062 0.585117 12.4125 0.39375C11.9343 0.208242 11.389 0.0818555 10.5906 0.045293C9.79055 0.00890629 9.5359 0 7.49836 0H7.5007ZM7.25057 1.35147H7.25074L7.5007 1.35152C9.5032 1.35152 9.74057 1.35873 10.5313 1.39465C11.2626 1.42811 11.6595 1.55027 11.9239 1.65293C12.2739 1.78887 12.5234 1.95141 12.7857 2.21391C13.0482 2.47641 13.2108 2.72643 13.347 3.07641C13.4497 3.34049 13.572 3.73734 13.6053 4.46859C13.6412 5.25926 13.6491 5.49674 13.6491 7.49836C13.6491 9.49992 13.6412 9.7374 13.6053 10.5281C13.5718 11.2593 13.4497 11.6562 13.347 11.9203C13.2111 12.2702 13.0482 12.5195 12.7857 12.7818C12.5232 13.0443 12.274 13.2069 11.9239 13.3428C11.6598 13.4459 11.2626 13.5678 10.5313 13.6012C9.74074 13.6372 9.5032 13.645 7.5007 13.645C5.49803 13.645 5.26066 13.6372 4.47006 13.6012C3.73881 13.5674 3.3419 13.4453 3.0774 13.3426C2.72736 13.2067 2.47734 13.0441 2.21484 12.7816C1.95234 12.5191 1.78986 12.2698 1.65363 11.9196C1.55098 11.6556 1.42863 11.2587 1.39535 10.5274C1.35938 9.73682 1.35223 9.49928 1.35223 7.49648C1.35223 5.49363 1.35938 5.25738 1.39535 4.46672C1.42875 3.73547 1.55098 3.33861 1.65363 3.07424C1.78957 2.7242 1.95234 2.47424 2.21484 2.21174C2.47734 1.94924 2.72736 1.7867 3.0774 1.65047C3.34178 1.54734 3.73881 1.42547 4.47006 1.39184C5.16193 1.36061 5.43006 1.35123 6.82787 1.34965V1.35152C6.95848 1.35135 7.09899 1.35141 7.25057 1.35147ZM10.6042 3.49658C10.6042 2.99953 11.0073 2.59688 11.5042 2.59688V2.59658C12.0011 2.59658 12.4042 2.99971 12.4042 3.49658C12.4042 3.99346 12.0011 4.39658 11.5042 4.39658C11.0073 4.39658 10.6042 3.99346 10.6042 3.49658ZM7.50053 3.64846C5.37357 3.64852 3.6491 5.37305 3.6491 7.50006C3.6491 9.62713 5.37363 11.3509 7.5007 11.3509C9.62777 11.3509 11.3517 9.62713 11.3517 7.50006C11.3517 5.37299 9.6276 3.64846 7.50053 3.64846ZM10.0007 7.50006C10.0007 6.11924 8.88135 5.00004 7.5007 5.00004C6.11988 5.00004 5.00068 6.11924 5.00068 7.50006C5.00068 8.8807 6.11988 10.0001 7.5007 10.0001C8.88135 10.0001 10.0007 8.8807 10.0007 7.50006Z" fill="white"></path>
-                    </svg>
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    <img src="./img/weixin.png">
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    <img src="./img/98e7f939-d6ec-48ad-a985-0e0b2e834330_thumb.png">
-                </div>
-                
-
-            </div>
-        </div>
-
-    </footer>
-    <div style="width: 1170px;margin: 0 auto;">
-        <p>&copy; 2024 Wangxin. All rights reserved.  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last updated: April 15, 2024.</p>
     </div>
 </body>
 </html>
+
