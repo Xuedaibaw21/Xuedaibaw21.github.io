@@ -1,75 +1,66 @@
-#basical-info img{
+/* General body styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Aileron-Black', sans-serif;
+    color: white;
+    background: none;
+}
+
+/* Full-screen background setup */
+#bk {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-image: url('./img/bg.png'); /* Background image path */
+    background-size: cover; /* Cover the full view */
+    background-position: center; /* Center the background image */
+    position: fixed; /* Fixed to avoid scrolling effects */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Below all other content */
+}
+
+/* Centered content area */
+#main {
+    width: 80%; /* Optimal reading width */
+    max-width: 1170px; /* Maximum width constraint */
+    min-height: calc(100vh - 40px); /* Full height minus some margin */
+    margin: 20px auto; /* Center horizontally and add vertical spacing */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    display: flex; /* Flexbox for vertical center alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align children horizontally */
+    justify-content: center; /* Center-align children vertically */
+}
+
+/* Profile image specific styles */
+.profile-img {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    margin: 80px;
-}
-#profile b{
-    line-height: 40px;
-    font-size: medium;
-}
-#icons{
-    height: 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-#icons img{
-    height: 35px;
-}
-#icons svg{
-    height: 35px;
-    width: 35px;
-}
-p{
-    font-size: 20px;
-}
-#slider {
-    width: 1000px;
-    height: 600px;
-    overflow: hidden;
-    margin: 20px auto;
-    position: relative;
-}
-.slides-container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    white-space: nowrap;
-    transition: transform 1s ease;
-    overflow: hidden;
-}
-.slide {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 20px; /* Space between image and text */
 }
 
-#footer-left{
-    font-size: 30px;
-    color: white;
-    font-weight: bold;
-}
-#footer-right{
-    font-size: medium;
-}
-#footer-right li{
-    list-style: none;
-    line-height: 30px;
-    font-weight: 700;
-    color: white;
-}
-#footer-right span{
-    color: rgb(204, 204, 204);
-    display: inline-block;
-    width: 120px;
+/* Basic information text styling */
+.profile-info {
+    text-align: center; /* Center-align text */
+    font-size: 20px; /* Legible font size */
+    line-height: 1.6; /* Optimal reading line height */
 }
 
-#foot>div{
-    width: 50%;
-    display: inline-block;
-    height: 125px;
+/* Navigation and header adjustments */
+#nav, header {
+    display: none; /* Remove header and navigation for simplicity */
 }
+
+/* Footer styling adjustments */
+footer {
+    display: none; /* Remove footer for simplicity */
+}
+
+/* Basic typographic and cursor animations */
 .cursor {
     display: inline-block;
     width: 2px;
@@ -78,78 +69,9 @@ p{
     margin-left: 5px;
     animation: blink 1s step-end infinite;
 }
+
 @keyframes blink {
     50% {
         background-color: transparent;
     }
-}
-
-#typewriter {
-    max-width: 1170;
-    padding: 10px;
-    font-size: 27px;
-    overflow-wrap: break-word;
-    color: white;
-}
-#nav{
-    height: 75px;
-    display: flex;
-    float: right;
-    align-items: center;
-    color: azure;
-    font-size: 20px;
-    margin: 0 10px;
-}
-#head>img{
-    height: 40px;
-    margin: 17.5px 0;
-    float: left;
-}
-#main{
-    width: 1170px;
-    min-height: calc(100vh - 270px);
-    margin: 0 auto;
-}
-#foot{
-    width: 1170px;
-    height: 125px;
-    margin: 0 auto;
-    display: flex;
-}
-footer{
-    height: 125px;
-    width: 100%;
-}
-#head{
-    width: 1170px;
-    height: 75px;
-    margin: 0 auto;
-}
-header{
-    height: 75px;
-    width: 100%;
-    padding:0;
-}
-#bk {
-    width: 100vw; /* 视口宽度 */
-    height: 100vh; /* 视口高度 */
-    background-image: url('./img/bg.png'); /* 设置背景图片 */
-    background-size: cover; /* 背景图片覆盖整个元素 */
-    background-position: center; /* 背景图片居中显示 */
-    position: fixed; /* 固定位置 */
-    top: 0;
-    left: 0;
-    z-index: -1; /* 确保背景在内容之下 */
-}
-
-body{
-    font-family: "Aileron-Black", sans-serif;
-    color: white;
-    width: 100%;
-    padding: 0%;
-    margin: 0%;
-}
-html{
-    font-family: "Aileron-Black", sans-serif;
-    width: 100%;
 }
