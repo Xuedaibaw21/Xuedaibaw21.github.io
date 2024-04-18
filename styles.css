@@ -1,74 +1,49 @@
-/* General body and HTML settings */
 body, html {
     height: 100%;
     margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif; /* Ensures text is legible */
-    color: white; /* White text color for high contrast on dark backgrounds */
-    background: none; /* No repeating background */
-    overflow-x: hidden; /* Prevents horizontal scroll */
+    font-family: Arial, sans-serif;
+    color: white;
 }
-
-/* Full viewport background image */
-#bk {
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background: url('./img/bg-optimized.jpg') center / cover no-repeat fixed; /* Optimized background image */
-    position: fixed; /* Fixed position to stay in place on scroll */
-    top: 0;
-    left: 0;
-    z-index: -1; /* Places the background behind all content */
+.background-image {
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* Main container styling */
-#main {
-    display: flex; /* Uses flexbox to align children */
-    justify-content: center; /* Centers children horizontally in the container */
-    align-items: center; /* Centers children vertically in the container */
-    height: 100vh; /* Full viewport height */
-    padding: 20px; /* Padding around the content */
-}
-
-/* Profile container that includes image and text */
 .profile-container {
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for readability */
-    border-radius: 10px; /* Rounded corners for aesthetics */
-    display: flex; /* Displays children (img and info) in a row */
-    align-items: center; /* Aligns children vertically in the center */
-    padding: 20px; /* Padding inside the container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 800px; /* Maximum width of the container */
-    width: 90%; /* Responsive width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
 }
-
-/* Styles for the profile image */
 .profile-img {
-    width: 200px; /* Fixed width */
-    height: 200px; /* Fixed height */
-    border-radius: 50%; /* Circle shape */
-    margin-right: 20px; /* Space between the image and the profile info */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
 }
-
-/* Styles for the profile information text */
 .profile-info {
-    text-align: left; /* Aligns text to the left */
-    font-size: 20px; /* Legible font size */
-    color: #333; /* Darker color for text for contrast against light background */
-    line-height: 1.5; /* Spacing between lines */
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.profile-info h1, .profile-info p {
+    margin: 10px 0;
 }
 
-/* Optional: Responsive adjustments for smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .profile-container {
-        flex-direction: column; /* Stacks image and text vertically on small screens */
-        align-items: center; /* Center-aligns items */
+        flex-direction: column;
+        text-align: center;
     }
     .profile-img {
-        margin-right: 0; /* No right margin */
-        margin-bottom: 10px; /* Space between image and text */
-    }
-    .profile-info {
-        text-align: center; /* Centers text for better aesthetics on small screens */
+        margin: 0 0 20px 0;
     }
 }
