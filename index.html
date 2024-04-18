@@ -10,9 +10,10 @@
             height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
+            color: white;
         }
         .background-image {
-            background-image: url('./img/bg.png');
+            background-image: url('./img/background.jpg');
             background-size: cover;
             background-position: center;
             height: 100%;
@@ -20,30 +21,45 @@
             align-items: center;
             justify-content: center;
         }
-        .profile {
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             width: 90%;
-            max-width: 600px;
-            text-align: center;
+            max-width: 800px; /* Adjusted for extra space for the image */
         }
-        .profile h1, .profile p {
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px; /* Space between image and text */
+        }
+        .profile-info {
+            text-align: left;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        .profile-info h1, .profile-info p {
             margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <div class="background-image">
-        <div class="profile">
-            <h1>王鑫</h1>
-            <p>成都理工大学 | 地球物理学院</p>
-            <p>空间科学与技术</p>
-            <p>成都 | 二仙桥</p>
-            <p>联系电话: 19981794817</p>
-            <p>Email: xuedaiba91@gmail.com</p>
+        <div class="profile-container">
+            <img src="./img/tou.jpg" alt="王鑫头像" class="tou-img">
+            <div class="profile-info">
+                <h1>王鑫</h1>
+                <p>成都理工大学 | 地球物理学院</p>
+                <p>空间科学与技术</p>
+                <p>成都 | 二仙桥</p>
+                <p>联系电话: 19981794817</p>
+                <p>Email: xuedaiba91@gmail.com</p>
+            </div>
         </div>
     </div>
 </body>
 </html>
-
