@@ -24,6 +24,7 @@ body, html {
     border-radius: 10px;
     width: 90%;
     max-width: 800px;
+    animation: fadeInUp 0.5s ease-out 0s; /* Apply the animation to the profile container */
 }
 
 .profile-img {
@@ -41,4 +42,15 @@ body, html {
 
 .profile-info h1, .profile-info p {
     margin: 10px 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
