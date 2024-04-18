@@ -1,4 +1,3 @@
-/* 优化后的CSS: 使用内联样式标签减少请求，并压缩CSS提高加载速度 */
 <style>
     body, html {
         height: 100%;
@@ -10,7 +9,7 @@
     #bk {
         width: 100vw;
         height: 100vh;
-        background: url('./img/bg-optimized.jpg') center/cover no-repeat fixed;
+        background: url('./img/bg.png') center/cover no-repeat fixed;
         position: fixed;
         top: 0;
         left: 0;
