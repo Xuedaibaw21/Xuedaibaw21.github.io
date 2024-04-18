@@ -1,42 +1,63 @@
-<style>
-    body, html {
-        height: 100%;
-        margin: 0;
-        font-family: 'Aileron-Black', sans-serif;
-        color: white;
-        background: none;
-    }
-    #bk {
-        width: 100vw;
-        height: 100vh;
-        background: url('./img/bg.png') center/cover no-repeat fixed;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-    #main {
-        width: 80%;
-        max-width: 1170px;
-        min-height: calc(100vh - 40px);
-        margin: 20px auto;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        display: flex;
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black; /* Updated font color to black */
+}
+.background-image {
+    background-image: url('./img/bg.png'); /* Ensure the correct background image path */
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9); /* Slightly increased the opacity for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+}
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.profile-info {
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.profile-info h1, .profile-info p {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
     }
     .profile-img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        margin-bottom: 20px;
+        margin: 0 0 20px 0;
     }
-    .profile-info {
-        text-align: center;
-        font-size: 20px;
-        line-height: 1.6;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
     }
-</style>
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.profile-container {
+    animation: fadeInUp 1s ease-out;
+}
