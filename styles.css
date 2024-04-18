@@ -2,10 +2,10 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    color: white;
+    color: black; /* Updated font color to black */
 }
 .background-image {
-    background-image: url('./img/bg.png'); /* Updated background image path */
+    background-image: url('./img/bg.png'); /* Ensure the correct background image path */
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -17,7 +17,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9); /* Slightly increased the opacity for better readability */
     padding: 20px;
     border-radius: 10px;
     width: 90%;
