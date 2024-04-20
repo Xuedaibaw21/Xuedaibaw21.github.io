@@ -1,111 +1,102 @@
-/* Reset some default styles */
+/* Basic Reset */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow-x: hidden; /* Prevent horizontal scroll */
-    font-family: 'Arial', sans-serif; /* Ensures a consistent font across the site */
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    color: #333;
 }
 
 /* Full-page styling for background images and alignment */
 .full-page {
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
-    align-items: center; /* Vertical alignment */
-    justify-content: center; /* Horizontal alignment */
-    scroll-snap-align: start; /* Ensures neat snapping when scrolling */
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
 }
 
 /* Background image styling */
 .background-image {
-    background-image: url('img/bg.png'); /* Link to your background image */
+    background-image: url('img/bg.png'); /* Ensure the correct image path */
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column; /* Stacks child elements vertically */
-    align-items: center; /* Centers child elements horizontally */
-    justify-content: center; /* Centers child elements vertically */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Container for profile information and game */
 .profile-container, .content {
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
-    width: 90%; /* Slightly less than full width */
-    max-width: 800px; /* Maximum width */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px; /* Space between sections */
+    margin-bottom: 20px;
 }
 
 /* Profile image styling */
 .profile-img {
     width: 200px;
     height: 200px;
-    border-radius: 50%; /* Circular image */
-    margin-bottom: 20px; /* Space below image */
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 /* Text styling within profile and content areas */
 .profile-info, .content {
-    text-align: center; /* Center-align text */
-    font-size: 18px; /* Slightly larger font for readability */
-    line-height: 1.5; /* Spacing between lines */
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 /* Header styling in profile and content areas */
 .profile-info h1, .content h2 {
-    color: #333; /* Dark grey color for text */
-    margin: 10px 0; /* Margin above and below headers */
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Game buttons container */
+.game-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 /* Button specific styling */
 button {
     padding: 10px 20px;
+    margin: 5px;
     font-size: 16px;
-    background-color: #007BFF; /* Bright blue background */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition for background color */
-    outline: none; /* Removes outline */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
 }
 
 /* Hover effect for button */
 button:hover {
-    background-color: #0056b3; /* Darker shade of blue on hover */
+    background-color: #0056b3;
 }
 
-/* Styling for game container specifically */
-#gameContainer {
-    width: 320px;
-    height: 320px;
-    margin-top: 20px;
-    background-color: #fafafa; /* Light grey background */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four columns of equal size */
-    gap: 5px; /* Gaps between cells */
-    padding: 5px; /* Padding around the grid */
-    border-radius: 5px; /* Rounded corners for the grid */
-}
-
-/* Grid cell styling */
-.grid-cell {
-    width: 75px; /* Width of each cell */
-    height: 75px; /* Height of each cell */
-    background-color: #ececec; /* Light grey cell background */
-    display: flex;
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
-    font-size: 20px; /* Font size for numbers */
-    color: #333; /* Dark grey text color */
-    font-weight: bold; /* Bold font weight for readability */
+@media (max-width: 600px) {
+    .game-buttons {
+        flex-direction: column;
+    }
 }
