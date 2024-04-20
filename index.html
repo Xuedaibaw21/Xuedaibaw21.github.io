@@ -9,34 +9,36 @@
 </head>
 <body>
     <header>
-        <!-- 图片轮播区域 -->
+        <div class="header-content">
+            <h1>欢迎来到Wang's Blog</h1>
+            <p>探索各类精彩内容</p>
+        </div>
         <div class="slider">
-            <img class="slides" src="img/slide1.jpg" alt="博客的第一张展示图片">
-            <img class="slides" src="img/slide2.jpg" alt="博客的第二张展示图片">
-            <img class="slides" src="img/slide3.jpg" alt="博客的第三张展示图片">
+            <img class="slides" src="img/slides1.png" alt="博客的第一张展示图片">
+            <img class="slides" src="img/slides2.png" alt="博客的第二张展示图片">
+            <img class="slides" src="img/slides3.png" alt="博客的第三张展示图片">
         </div>
     </header>
 
     <section class="content background-image">
         <article class="column news">
-            <h2>今日新闻</h2>
-            <p>新闻内容1</p>
-            <p>新闻内容2</p>
-            <p>新闻内容3</p>
+            <h2>资源搜索</h2>
+            <a href="https://thepiratebay.org" target="_blank" class="button-style">The Pirate Bay</a>
+            <a href="https://zlibrary-sg.se" target="_blank" class="button-style">Z-library</a>
+            <a href="https://李颜控.com" target="_blank" class="button-style">考研资料</a>
         </article>
         <article class="column resources">
             <h2>学习资源</h2>
-            <p>资源1</p>
-            <p>资源2</p>
-            <p>资源3</p>
+            <button class="button-style" onclick="window.open('/pdfs/计算机网络.pdf', '_blank');">计算机网络</button>
+            <button class="button-style" onclick="window.open('/pdfs/遥感导论.pdf', '_blank');">遥感导论</button>
         </article>
         <aside class="column games">
             <h2>游戏链接</h2>
             <div class="game-buttons">
-                <button onclick="window.location.href='2048/index.html';"><i class="fa fa-gamepad"></i> 2048</button>
-                <button onclick="window.location.href='snake/index.html';"><i class="fa fa-snake"></i> 贪吃蛇</button>
-                <button onclick="window.location.href='tetris/index.html';"><i class="fa fa-tetris"></i> 俄罗斯方块</button>
-                <button onclick="window.location.href='sweeper/index.html';"><i class="fa fa-bomb"></i> 扫雷</button>
+                <button class="button-style" onclick="window.location.href='2048/index.html';">2048</button>
+                <button class="button-style" onclick="window.location.href='snake/index.html';">贪吃蛇</button>
+                <button class="button-style" onclick="window.location.href='tetris/index.html';">俄罗斯方块</button>
+                <button class="button-style" onclick="window.location.href='sweeper/index.html';">扫雷</button>
             </div>
         </aside>
     </section>
@@ -44,7 +46,7 @@
     <footer>
         <img src="img/music.jpeg" alt="音乐控制按钮" class="music-button" id="musicButton" onclick="toggleMusicAndAnimation()">
         <div class="contact-container">
-            <button id="contactButton">联系方式</button>
+            <button class="button-style" id="contactButton">联系方式</button>
         </div>
         <div id="qrModal" class="modal">
             <div class="modal-content">

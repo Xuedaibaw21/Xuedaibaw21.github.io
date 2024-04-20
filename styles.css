@@ -22,6 +22,14 @@ body::after {
     z-index: -1;
 }
 
+.header-content {
+    text-align: center;
+    padding: 20px 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+}
+
 .slider {
     width: 100%;
     height: 40vh;
@@ -30,7 +38,7 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .slides {
@@ -56,15 +64,10 @@ body::after {
     background: rgba(255, 255, 255, 0.8);
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.news, .resources, .games {
-    font-size: 18px;
-    line-height: 1.5;
     text-align: center;
 }
 
-.game-buttons button {
+.button-style {
     width: 90%;
     padding: 15px;
     margin: 10px 0;
@@ -75,9 +78,10 @@ body::after {
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     cursor: pointer;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.game-buttons button:hover {
+.button-style:hover {
     box-shadow: 0 6px 10px rgba(0,0,0,0.3);
     transform: translateY(-2px);
 }
