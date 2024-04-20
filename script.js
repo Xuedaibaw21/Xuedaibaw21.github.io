@@ -1,29 +1,44 @@
+var index = 0;
+var slides = document.getElementsByClassName("slides");
 var music = document.getElementById("backgroundMusic");
 var musicButton = document.getElementById("musicButton");
-var isPlaying = false; // Assume music is not playing initially
-
-document.addEventListener('DOMContentLoaded', function() {
-    music.play().then(() => {
-        isPlaying = true;
-        musicButton.style.opacity = "1"; // Full opacity if playing
-        musicButton.style.animationPlayState = 'running'; // Start rotation
-    }).catch(error => {
-        console.error("Auto-play was prevented by the browser: ", error);
-        musicButton.style.opacity = "0.5"; // Lower opacity to indicate not playing
-        musicButton.style.animationPlayState = 'paused'; // Keep paused
-    });
-});
+var modal = document.getElementById("qrModal");
+var closeButton = document.getElementsByClassName("close-button")[0];
 
 function toggleMusicAndAnimation() {
-    if (isPlaying) {
-        music.pause();
-        musicButton.style.animationPlayState = 'paused'; // Pause the rotation
-        musicButton.style.opacity = "0.5"; // Lower opacity
-        isPlaying = false;
-    } else {
+    if (music.paused) {
         music.play();
-        musicButton.style.animationPlayState = 'running'; // Resume the rotation
-        musicButton.style.opacity = "1"; // Full opacity
-        isPlaying = true;
+        musicButton.style.opacity = "1";
+        musicButton.style.animationPlayState = 'running';
+    } else {
+        music.pause();
+        musicButton.style.opacity = "0.5";
+        musicButton.style.animationPlayState = 'paused';
     }
 }
+
+function showSlides() {
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    index++;
+    if (index > slides.length) {index = 1}
+    slides[index-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+showSlides(); // Call the function
+
+document.getElementById("contactButton").addEventListener('click', function() {
+    modal.style.display = "block";
+});
+
+closeButton.addEventListener('click', function() {
+    modal.style.display = "none";
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+});

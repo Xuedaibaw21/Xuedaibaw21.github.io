@@ -2,44 +2,63 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>王鑫的简历</title>
+    <title>wang.blog</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="王鑫的个人简历，包括教育背景、联系信息以及专业技能。">
+    <meta name="description" content="博客，包含新闻，资源和游戏链接">
 </head>
 <body>
-    <img src="img/music.jpeg" alt="音乐控制按钮" class="music-button" id="musicButton" onclick="toggleMusicAndAnimation()">
-
-    <div class="full-page background-image" id="page1">
-        <div class="profile-container">
-            <img src="img/tou.jpg" alt="王鑫的专业头像" class="profile-img">
-            <div class="profile-info">
-                <h1>王鑫</h1>
-                <p>成都理工大学 | 地球物理学院</p>
-                <p>空间科学与技术</p>
-                <p>成都 | 二仙桥东三路1号</p>
-                <p>联系电话: 19981794817</p>
-                <p>Email: xuedaiba91@gmail.com</p>
-            </div>
+    <header>
+        <!-- 图片轮播区域 -->
+        <div class="slider">
+            <img class="slides" src="img/slide1.jpg" alt="博客的第一张展示图片">
+            <img class="slides" src="img/slide2.jpg" alt="博客的第二张展示图片">
+            <img class="slides" src="img/slide3.jpg" alt="博客的第三张展示图片">
         </div>
-    </div>
-    <div class="full-page background-image" id="page2">
-        <div class="content">
-            <h2>游戏</h2>
-            <p>选择一个游戏来玩！</p>
+    </header>
+
+    <section class="content background-image">
+        <article class="column news">
+            <h2>今日新闻</h2>
+            <p>新闻内容1</p>
+            <p>新闻内容2</p>
+            <p>新闻内容3</p>
+        </article>
+        <article class="column resources">
+            <h2>学习资源</h2>
+            <p>资源1</p>
+            <p>资源2</p>
+            <p>资源3</p>
+        </article>
+        <aside class="column games">
+            <h2>游戏链接</h2>
             <div class="game-buttons">
-                <button onclick="window.location.href='2048/index.html';">玩 2048</button>
-                <button onclick="window.location.href='snake/index.html';">玩 贪吃蛇</button>
-                <button onclick="window.location.href='tetris/index.html';">玩 俄罗斯方块</button>
-                <button onclick="window.location.href='sweeper/index.html';">玩 扫雷</button>
+                <button onclick="window.location.href='2048/index.html';"><i class="fa fa-gamepad"></i> 2048</button>
+                <button onclick="window.location.href='snake/index.html';"><i class="fa fa-snake"></i> 贪吃蛇</button>
+                <button onclick="window.location.href='tetris/index.html';"><i class="fa fa-tetris"></i> 俄罗斯方块</button>
+                <button onclick="window.location.href='sweeper/index.html';"><i class="fa fa-bomb"></i> 扫雷</button>
+            </div>
+        </aside>
+    </section>
+
+    <footer>
+        <img src="img/music.jpeg" alt="音乐控制按钮" class="music-button" id="musicButton" onclick="toggleMusicAndAnimation()">
+        <div class="contact-container">
+            <button id="contactButton">联系方式</button>
+        </div>
+        <div id="qrModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <img src="img/QRCode.jpg" alt="微信二维码" class="qr-code">
+                <p>扫一扫上面的二维码图案，加我微信</p>
             </div>
         </div>
-    </div>
+        <audio id="backgroundMusic" loop>
+            <source src="audio/background.mp3" type="audio/mpeg">
+            您的浏览器不支持 audio 元素。
+        </audio>
+    </footer>
 
-    <audio id="backgroundMusic" loop>
-        <source src="audio/background.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
     <script src="script.js"></script>
 </body>
 </html>

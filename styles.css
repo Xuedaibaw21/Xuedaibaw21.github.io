@@ -9,91 +9,124 @@ body, html {
     color: #333;
 }
 
-/* Full-page styling for background images and alignment */
-.full-page {
+/* Styles for image slider */
+.slider {
     width: 100%;
-    height: 100vh;
+    height: 40vh;  /* This will set the slider's height as 40% of the viewport height */
+    position: relative;
+    overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: start;
+    justify-content: center;  /* Center children horizontally */
+    align-items: center;  /* Center children vertically */
+    margin-bottom: 40px;  /* Set bottom margin for spacing */
 }
 
-/* Background image styling */
-.background-image {
+.slides {
+    width: auto; /* Auto width to maintain aspect ratio */
+    max-height: 100%;  /* Limit height to container's height */
+    max-width: 100%;  /* Limit width to container's width */
+    display: none;
+    object-fit: contain; /* Scale the image to be as large as possible */
+}
+
+/* Background image styling for content section */
+.content.background-image {
+    display: flex;
+    justify-content: space-between;
     background-image: url('img/bg.png');
     background-size: cover;
     background-position: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Container for profile information and game */
-.profile-container, .content {
-    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
+    padding-top: 40px;  /* Add padding on top for spacing */
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Increase transparency */
+    margin: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
 }
 
-/* Profile image and text styling */
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.profile-info, .content {
-    text-align: center;
+.news, .resources, .games {
     font-size: 18px;
     line-height: 1.5;
+    text-align: center;
 }
 
-/* Game buttons styling */
 .game-buttons button {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007BFF;
+    width: 90%;
+    padding: 15px;
+    margin: 10px 0;
+    background-image: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 .game-buttons button:hover {
-    background-color: #0056b3;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
 }
 
 /* Music button styling */
 .music-button {
     position: fixed;
-    right: 20px; /* Increased distance from the right edge */
-    top: 20px;  /* Increased distance from the top edge */
-    width: 80px; /* Increased size for better visibility and interaction */
-    height: 80px; /* Increased size for better visibility and interaction */
-    border-radius: 50%; /* Keeps the image round */
+    right: 20px;
+    top: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     cursor: pointer;
-    z-index: 1000; /* Ensures it is above other elements */
-    opacity: 0.5; /* Start with a lower opacity to indicate it's not playing */
-    transition: opacity 0.3s;
-    animation: rotateImage 10s linear infinite; /* Rotation animation */
-    animation-play-state: paused; /* Start with paused state */
+    z-index: 1000;
+    opacity: 0.5;
+    animation: rotateImage 10s linear infinite;
+    animation-play-state: paused;
 }
 
 @keyframes rotateImage {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Adjusted for better centering */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Better size for QR code */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.qr-code {
+    width: 100%;
+    margin-top: 20px;
 }
