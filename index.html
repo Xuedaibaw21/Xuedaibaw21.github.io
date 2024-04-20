@@ -8,6 +8,8 @@
     <meta name="description" content="王鑫的个人简历，包括教育背景、联系信息以及专业技能。">
 </head>
 <body>
+    <img src="img/music.jpeg" alt="音乐控制按钮" class="music-button" id="musicButton" onclick="toggleMusicAndAnimation()">
+
     <div class="full-page background-image" id="page1">
         <div class="profile-container">
             <img src="img/tou.jpg" alt="王鑫的专业头像" class="profile-img">
@@ -33,5 +35,11 @@
             </div>
         </div>
     </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="audio/background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="script.js"></script>
 </body>
 </html>
